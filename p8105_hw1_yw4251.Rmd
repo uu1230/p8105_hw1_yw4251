@@ -1,0 +1,6 @@
+---
+title: "p8105_hw1_yw4251"
+author: "You Wu"
+date: 2023-09-17
+output: github_document
+---
