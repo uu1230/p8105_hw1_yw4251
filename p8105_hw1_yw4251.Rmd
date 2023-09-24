@@ -88,5 +88,12 @@ fact_mean=mean(pull(la_df,fact_vecc))
 
 ```
 
+Convert the vector to numerical.I find that `logical vector` and `factor vector` can be converted into `numerical vector`. For `logical vector`, it converts `True` to 1 and `False` to 0. For `factor vector`, it returns the underlying numeric codes for each factor level. For `character vector`, there's no meaning for their numerical representation, so they cannot be converted.
+
+```{r,eval=FALSE}
+log_num=as.numeric(pull(la_df,log_vecc))
+char_num=as.numeric(pull(la_df,char_vecc))
+fact_num=as.numeric(pull(la_df,fact_vecc))
+```
 
 
