@@ -66,3 +66,27 @@ ggsave('scatterplot.png',plot=scatterplot)
 
 # Problem 2
 
+Create the dataframe.
+
+```{r}
+la_df=
+  tibble(
+    num_samp=rnorm(10),
+    log_vecc=num_samp>0,
+    char_vecc=letters[1:10],
+    fact_vecc = as.factor(rep(1:3, length.out=10))
+  )
+la_df
+```
+Now, calculate the mean of each variable. I find that only the `numerical mean` and `vector mean` work.
+
+```{r}
+num_mean=mean(pull(la_df,num_samp))
+log_mean=mean(pull(la_df,log_vecc))
+char_mean=mean(pull(la_df,char_vecc))
+fact_mean=mean(pull(la_df,fact_vecc))
+
+```
+
+
+
