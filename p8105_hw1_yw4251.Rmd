@@ -26,7 +26,7 @@ Hourly meterological data for LGA, JFK and EWR for the month of January 2013. Th
 
 **Variables**
 
-**_origin:_** Weather station. Named `origin` to facilitate merging with nycflights13::flights data.
+**_origin:_** Weather station. Named _origin_ to facilitate merging with nycflights13::flights data.
 
 **_year, month, day, hour:_** Time of recording.
 
@@ -44,8 +44,8 @@ Hourly meterological data for LGA, JFK and EWR for the month of January 2013. Th
 
 **_time_hour:_** Date and hour of the recording as a POSIXct date.
 
-I could calculate the mean of temperature.
-The mean is `r round(mean(early_january_weather$temp),digits=4)` F.
+I could calculate the `mean of temperature`.
+The mean is `r round(mean(pull(early_january_weather, temp)),digits=4)` F.
 
 
 ## Scatterplot
@@ -59,5 +59,10 @@ scatterplot <- ggplot(early_january_weather, aes(x = time_hour, y = temp, color 
     y = "Temperature",
     color = "Humidity"
   )
+scatterplot
 ggsave('scatterplot.png',plot=scatterplot)
 ```
+
+
+# Problem 2
+
