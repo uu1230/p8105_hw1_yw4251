@@ -4,3 +4,14 @@ author: "You Wu"
 date: 2023-09-17
 output: github_document
 ---
+
+First, we load package and load `early_january_weather` dataset.
+```{r}
+library(moderndive)
+data("early_january_weather")
+early_january_weather
+```
+```{r,eval=FALSE}
+help(early_january_weather)
+```
+
