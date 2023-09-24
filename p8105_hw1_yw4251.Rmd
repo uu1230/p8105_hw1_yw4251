@@ -5,9 +5,12 @@ date: 2023-09-17
 output: github_document
 ---
 
+# Problem 1
+
 First, we load package and load `early_january_weather` dataset.
 ```{r}
 library(moderndive)
+library(tidyverse)
 data("early_january_weather")
 early_january_weather
 ```
@@ -15,7 +18,7 @@ early_january_weather
 help(early_january_weather)
 ```
 
-# Early January hourly weather data
+## Early January hourly weather data
 
 **Description**
 
@@ -43,3 +46,18 @@ Hourly meterological data for LGA, JFK and EWR for the month of January 2013. Th
 
 I could calculate the mean of temperature.
 The mean is `r round(mean(early_january_weather$temp),digits=4)` F.
+
+
+## Scatterplot
+
+
+```{r}
+scatterplot <- ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +
+  geom_point() +
+  labs(
+    x = "Time Hour",
+    y = "Temperature",
+    color = "Humidity"
+  )
+ggsave('scatterplot.png',plot=scatterplot)
+```
