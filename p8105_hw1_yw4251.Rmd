@@ -15,3 +15,31 @@ early_january_weather
 help(early_january_weather)
 ```
 
+# Early January hourly weather data
+
+**Description**
+
+Hourly meterological data for LGA, JFK and EWR for the month of January 2013. This is a subset of the weather data frame from nycflights13. A data frame of `r nrow(early_january_weather)` rows representing hourly measurements and `r ncol(early_january_weather)` variables.
+
+**Variables**
+
+**_origin:_** Weather station. Named `origin` to facilitate merging with nycflights13::flights data.
+
+**_year, month, day, hour:_** Time of recording.
+
+**_temp, dewp:_** Temperature and dewpoint in F.
+
+**_humid:_** Relative humidity.
+
+**_wind_dir, wind_speed, wind_gust:_** Wind direction (in degrees), speed and gust speed (in mph).
+
+**_precip:_** Precipitation, in inches.
+
+**_pressure:_** Sea level pressure in millibars.
+
+**_visib:_** Visibility in miles.
+
+**_time_hour:_** Date and hour of the recording as a POSIXct date.
+
+I could calculate the mean of temperature.
+The mean is `r round(mean(early_january_weather$temp),digits=4)` F.
